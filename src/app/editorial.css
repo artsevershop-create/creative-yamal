@@ -1,13 +1,11 @@
 /* Editorial photography is part of the composition, never a member profile. */
 .northern-editorial{grid-column:1/-1;position:relative;margin-top:48px;min-height:480px;display:grid;grid-template-columns:1.7fr 1fr;gap:22px;padding-bottom:62px}
-.north-photo{background-repeat:no-repeat;background-size:auto 500%;min-height:420px}
-.north-photo-wide{background-image:url('/images/north-landscape-reference.jpg');background-position:100% 25%}
-.north-photo-detail{background-image:url('/images/north-portraits-reference.jpg');background-position:0 0;transform:translateY(36px)}
+.north-photo{background-repeat:no-repeat;background-size:cover;min-height:420px}
+.north-photo-wide{background-image:url('/images/yamal-summer.png');background-position:center}
+.north-photo-detail{background-image:url('/images/textile.png');background-position:center;transform:translateY(36px)}
 .north-editorial-caption{position:absolute;bottom:0;left:0;display:flex;align-items:baseline;justify-content:space-between;width:100%;gap:16px}
 .north-editorial-caption>span{font-size:clamp(28px,4vw,58px);font-weight:600;letter-spacing:-.045em}
 .north-editorial-caption small{font-size:10px;color:#65717a;max-width:180px}
-.journal-cover-photo{position:absolute;inset:0;background:url('/images/north-landscape-reference.jpg') 0 0 / auto 500% no-repeat}
-.journal-cover-photo:after{content:'';position:absolute;inset:0;background:linear-gradient(#071a2b55,transparent 45%,#071a2bd9)}
 .journal-copy>p{font-size:17px;line-height:1.65;max-width:600px}
 .voices-grid{gap:14px}
 .voices-grid article{padding:0 0 28px;border-bottom:1px solid #071a2b30}
