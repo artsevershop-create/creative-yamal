@@ -1,0 +1,8 @@
+node_modules/
+.next/
+.next-backup-*/
+*.tsbuildinfo
+out/
+*.log
+design/backup/
+scripts/publish-github.ps1
