@@ -2,3 +2,24 @@
 @media(max-width:1000px){.why-now{gap:35px}.why-photo{min-height:520px}.territory-list{column-gap:30px}.territory-list>div{grid-template-columns:1fr;gap:8px}.market-path{grid-template-columns:repeat(4,1fr);gap:40px 0}.event-agenda li{grid-template-columns:70px 1fr 180px;gap:22px}.group-resources>a,.group-resources>div{padding:28px}}
 @media(max-width:600px){.why-now{grid-template-columns:1fr}.why-photo{min-height:380px;order:2}.reason-list li{font-size:18px;padding:17px 0}.why-photo blockquote{padding:60px 24px 24px}.territory-list{grid-template-columns:1fr}.territory-list>div{grid-template-columns:1fr 1fr;gap:15px}.territory-list dt{font-size:17px}.territory-list dd{font-size:13px}.candidate-core{grid-template-columns:1fr;gap:25px;padding:40px 0}.candidate-total strong{font-size:110px}.benefit-list{grid-template-columns:1fr}.benefit-list h4{font-size:22px}.group-resources{grid-template-columns:1fr}.group-benefits{margin:55px 0}.market-path{grid-template-columns:1fr;margin:35px 0;gap:0}.market-path li{padding:20px 0 20px 40px;border-top:0;border-left:1px solid #071a2b40}.market-path li:before{top:24px;left:-9px;padding:4px 0}.market-path li:not(:last-child):after{display:none}.market-path h3{margin:0 0 8px;font-size:25px}.market-path p{font-size:14px;max-width:280px}.event-agenda li{grid-template-columns:1fr;gap:15px;padding:26px 0}.event-result{padding-left:14px}.event-result p{margin-top:7px;font-size:16px}.event-agenda h3{font-size:29px}.event-stage{padding:0}}
 @media(prefers-reduced-motion:reduce){.why-photo img,.assistant-resource{transition:none}.why-photo:hover img{transform:none}}
+/* Application delivery and project destinations */
+.submit select{width:100%;font:inherit;font-size:16px;color:var(--ink);background:transparent;border:0;border-bottom:1px solid #b8c6cf;border-radius:0;padding:12px 0;line-height:1.5}
+.submit .form-honeypot{display:none!important}
+.submit .form-consent{flex-direction:row;align-items:flex-start;gap:12px;line-height:1.6;font-size:12px;color:var(--muted)}
+.submit .form-consent input{width:18px;height:18px;flex:0 0 18px;margin:3px 0 0;accent-color:var(--navy)}
+.form-delivery-note{font-size:12px;line-height:1.7;color:var(--muted)}
+.form-delivery-note a,.thanks-page p a{text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.project-details{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:60px;background:#e7eff2}
+.project-details article{scroll-margin-top:80px;min-width:0}
+.project-details article+article{border-left:1px solid var(--line);padding-left:60px}
+.project-details h2{font-size:clamp(38px,4vw,64px);margin-bottom:26px}
+.project-details p{font-size:17px;line-height:1.7;max-width:550px}
+.project-details ul{padding-left:20px;font-size:14px;line-height:1.9;margin:24px 0}
+.project-details .text-button{font-size:14px;line-height:1.5}
+.tender-resource a.resource-action{display:inline-flex;text-decoration:none}
+.thanks-page{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:28px}
+.thanks-page .section-label{margin:0}
+.thanks-page h1{font-size:clamp(56px,9vw,128px);font-weight:500;line-height:1;letter-spacing:-.055em}
+.thanks-page p{max-width:620px;font-size:18px;line-height:1.7}
+.thanks-page p.muted{font-size:14px}
+@media(max-width:760px){.project-details{grid-template-columns:1fr;gap:40px}.project-details article+article{border-left:0;border-top:1px solid var(--line);padding-left:0;padding-top:40px}.project-details p{font-size:15px}.submit .form-actions{flex-wrap:wrap}.thanks-page p{font-size:16px}}
