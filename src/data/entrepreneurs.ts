@@ -1,6 +1,5 @@
 // Каталог предпринимателей, привязанный к городам карты ЯНАО.
-// Источник данных пока не подключён. Записи с пометкой «макет» — заглушки для проверки интерфейса,
-// их нужно удалить перед публикацией и заменить подтверждёнными данными.
+// Записи добавляются по мере поступления подтверждённых заявок.
 // Категории предложены для обсуждения и не утверждены.
 
 export const categories = [
@@ -23,7 +22,6 @@ export type Entrepreneur = {
   category: Category;
   description?: string;
   url?: string;
-  isSample?: boolean; // true = макетная запись, не реальный предприниматель
 };
 
 export const entrepreneurs: Entrepreneur[] = [
@@ -32,10 +30,7 @@ export const entrepreneurs: Entrepreneur[] = [
     name: 'ООО «Северный характер»',
     cityId: 'salekhard',
     category: 'Дизайн и мода',
-    description: 'бренд одежды «Северный мерч»',
+    description: 'Бренд одежды «Северный мерч».',
     url: 'https://xn--b1afbatsfxeb9ezb.xn--p1ai/',
   },
-  { id: 'sample-1', name: 'Макет: текстильная мастерская', cityId: 'salekhard', category: 'Дизайн и мода', isSample: true },
-  { id: 'sample-2', name: 'Макет: студия керамики', cityId: 'salekhard', category: 'Ремёсла и народные промыслы', isSample: true },
-  { id: 'sample-3', name: 'Макет: digital-агентство', cityId: 'urengoy', category: 'Медиа и digital', isSample: true },
 ];

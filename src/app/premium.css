@@ -251,8 +251,40 @@ h3 {
   line-height: 1.6;
 }
 
-.city-business li small {
-  display: inline;
+.business-link,
+.business-back {
+  background: none;
+  padding: 0;
+  text-align: left;
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(255, 255, 255, .35);
+  font-size: 14px;
+}
+
+.business-link:hover,
+.business-link:focus-visible {
+  color: var(--ice, #a7d9e8);
+}
+
+.business-back {
+  font-size: 13px;
+  text-decoration: none;
+  opacity: .75;
+  margin-bottom: 14px;
+}
+
+.business-meta {
+  font-size: 13px;
+  opacity: .7;
+  margin: 4px 0 12px;
+}
+
+.business-text {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 14px;
 }
 
 .city-business small,
