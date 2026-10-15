@@ -4,6 +4,7 @@ import './regional.css';
 import './motion.css';
 import './editorial.css';
 import './strategy.css';
+import './premium.css';
 
 export const metadata: Metadata = {
   title: 'Креативный Ямал — люди, идеи, проекты',

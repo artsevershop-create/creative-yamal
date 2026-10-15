@@ -1,0 +1,300 @@
+/* Premium layer: loaded last. Refines the existing system without changing markup or copy. */
+
+:root {
+  --premium-ease: cubic-bezier(.22, .72, .18, 1);
+  --premium-line: rgba(23, 36, 46, .12);
+  --premium-line-dark: rgba(244, 247, 248, .14);
+  --premium-radius: 14px;
+  --premium-shadow: 0 1px 2px rgba(7, 26, 43, .06), 0 18px 40px -22px rgba(7, 26, 43, .28);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  line-height: 1.6;
+  font-feature-settings: "ss01", "cv11";
+}
+
+/* Subtle paper grain across the whole page */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  pointer-events: none;
+  opacity: .035;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  background: rgba(244, 247, 248, .82);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+  backdrop-filter: saturate(160%) blur(14px);
+  border-bottom: 1px solid var(--premium-line);
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.navigation > a {
+  font-size: 13px;
+  letter-spacing: .01em;
+  color: rgba(23, 36, 46, .78);
+  transition: color .2s;
+}
+
+.navigation > a:hover,
+.navigation > a:focus-visible {
+  color: var(--navy);
+}
+
+/* ---------- Typography ---------- */
+h2 {
+  font-weight: 400;
+  letter-spacing: -.045em;
+  line-height: 1.04;
+}
+
+h2 em,
+.hero h1 > span {
+  font-style: normal;
+  font-weight: 300;
+}
+
+h3 {
+  letter-spacing: -.02em;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
+.section-label::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: var(--brand-red, #c8102e);
+}
+
+.section-heading > p,
+.manifest-copy p {
+  font-size: 16.5px;
+  line-height: 1.7;
+}
+
+/* ---------- Section rhythm ---------- */
+.section-shell {
+  padding-top: clamp(96px, 11vw, 160px);
+  padding-bottom: clamp(96px, 11vw, 160px);
+}
+
+.section-heading {
+  margin-bottom: clamp(44px, 5vw, 72px);
+}
+
+/* ---------- Buttons ---------- */
+.button {
+  border-radius: 999px;
+  padding: 18px 28px;
+  min-height: 60px;
+  letter-spacing: .01em;
+  box-shadow: 0 10px 30px -14px rgba(7, 26, 43, .5);
+}
+
+.button-light {
+  background: #fff;
+  color: var(--navy);
+}
+
+.button-light:hover {
+  background: var(--ice);
+  box-shadow: 0 16px 36px -14px rgba(167, 217, 232, .8);
+}
+
+.button-dark:hover {
+  background: #0d2a42;
+}
+
+.text-button {
+  border-bottom-color: var(--premium-line);
+  padding-bottom: 10px;
+  transition: border-color .25s, color .25s;
+}
+
+.text-button:hover {
+  border-bottom-color: currentColor;
+}
+
+/* ---------- Cards & lists ---------- */
+.flagship {
+  border-radius: var(--premium-radius);
+  min-height: 560px;
+  box-shadow: var(--premium-shadow);
+}
+
+.flagship > img {
+  transition: transform 1.2s var(--premium-ease);
+}
+
+.flagship:hover > img {
+  transform: scale(1.04);
+}
+
+.flagship h3 {
+  font-weight: 400;
+}
+
+.opportunity-grid > a {
+  border-radius: var(--premium-radius);
+  border: 1px solid var(--premium-line);
+  transition: transform .4s var(--premium-ease), box-shadow .4s var(--premium-ease), border-color .3s;
+}
+
+.opportunity-grid > a:hover {
+  box-shadow: var(--premium-shadow);
+  border-color: transparent;
+}
+
+.criteria-list details {
+  border-color: var(--premium-line);
+}
+
+.join-steps article,
+.pillars article {
+  border-color: var(--premium-line);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  padding-top: clamp(72px, 9vw, 120px);
+  padding-bottom: 34px;
+  background:
+    radial-gradient(1200px 500px at 85% -10%, rgba(36, 84, 214, .18), transparent 60%),
+    var(--navy);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--premium-line-dark);
+  padding-top: 22px;
+  letter-spacing: .01em;
+}
+
+/* ---------- Scroll reveal (progressive enhancement, no JS) ---------- */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .manifest > *,
+    .journal-copy > *,
+    .change-intro > *,
+    .section-heading > * {
+      animation: premium-rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 28%;
+    }
+
+    @keyframes premium-rise {
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  }
+}
+
+/* ---------- City business list ---------- */
+.city-business {
+  margin: 22px 0 18px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, .14);
+}
+
+.city-business h4 {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  opacity: .8;
+}
+
+.city-business section + section {
+  margin-top: 14px;
+}
+
+.city-business h5 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: var(--ice, #a7d9e8);
+}
+
+.city-business ul {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.city-business li small {
+  display: inline;
+}
+
+.city-business small,
+.city-business-empty {
+  opacity: .65;
+  font-size: 13px;
+}
+
+/* ---------- Map city labels ---------- */
+.map-city text {
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ---------- Focus & selection ---------- */
+:focus-visible {
+  outline-color: var(--brand-red, #c8102e);
+  outline-offset: 4px;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 760px) {
+  .site-header {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .flagship {
+    min-height: 480px;
+  }
+
+  .section-label {
+    margin-bottom: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body::before {
+    display: none;
+  }
+}
